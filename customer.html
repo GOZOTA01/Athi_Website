@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Customer login portal for Happy Tails. Manage your subscriptions and services online.">
+    <title>Customer Login - Happy Tails</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="ChatGPT Image Dec 16, 2025, 12_59_10 PM.png" alt="Happy Tails Logo">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="residential.html">Residential Services</a></li>
+                <li><a href="commercial.html">Commercial Services</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="customer.html">Customer</a></li>
+                <li><a href="locations.html">Locations</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="search-btn" aria-label="Search">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </button>
+                <a href="locations.html" class="btn-primary">Sign Up / Get a Free Quote</a>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Customer Portal</h1>
+            <p>Manage your services and account</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="page-content">
+        <div class="container">
+            <div class="form-container">
+                <h2 style="text-align: center; color: var(--primary-green); margin-bottom: 2rem;">Login to Your Account</h2>
+                
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="remember" name="remember">
+                            <label for="remember">Remember Me</label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-primary" style="width: 100%; margin-bottom: 1rem;">Login</button>
+
+                    <div style="text-align: center;">
+                        <a href="#" id="forgot-password" style="color: var(--primary-green); text-decoration: none;">Forgot Password?</a>
+                    </div>
+                </form>
+
+                <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--light-gray); text-align: center;">
+                    <p style="color: var(--gray); margin-bottom: 1rem;">Don't have an account?</p>
+                    <a href="locations.html" class="btn-primary">Sign Up / Get a Free Quote</a>
+                </div>
+            </div>
+
+            <!-- Forgot Password Form (Hidden by default) -->
+            <div class="form-container" id="forgot-password-form" style="display: none; margin-top: 2rem;">
+                <h2 style="text-align: center; color: var(--primary-green); margin-bottom: 2rem;">Reset Password</h2>
+                <p style="text-align: center; color: var(--gray); margin-bottom: 1.5rem;">Enter your email address and we'll send you a link to reset your password.</p>
+                
+                <form id="reset-form">
+                    <div class="form-group">
+                        <label for="reset-email">Email Address</label>
+                        <input type="email" id="reset-email" name="reset-email" required>
+                    </div>
+
+                    <button type="submit" class="btn-primary" style="width: 100%; margin-bottom: 1rem;">Send Reset Link</button>
+
+                    <div style="text-align: center;">
+                        <a href="#" id="back-to-login" style="color: var(--primary-green); text-decoration: none;">Back to Login</a>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Dashboard (Hidden until logged in) -->
+            <div id="customer-dashboard" style="display: none;">
+                <div class="content-section">
+                    <h2>Welcome Back!</h2>
+                    <p>Manage your services, view service history, update your account information, and more.</p>
+                </div>
+
+                <div class="features-grid" style="margin-top: 2rem;">
+                    <div class="feature-card">
+                        <div class="feature-icon">📅</div>
+                        <h3>Service Schedule</h3>
+                        <p>View your upcoming service dates and manage your schedule.</p>
+                        <button class="btn-primary" style="width: 100%; margin-top: 1rem;">View Schedule</button>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">📋</div>
+                        <h3>Service History</h3>
+                        <p>Review past service visits and service reports.</p>
+                        <button class="btn-primary" style="width: 100%; margin-top: 1rem;">View History</button>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">💳</div>
+                        <h3>Billing & Payments</h3>
+                        <p>Manage your payment methods and view billing history.</p>
+                        <button class="btn-primary" style="width: 100%; margin-top: 1rem;">Manage Billing</button>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">⚙️</div>
+                        <h3>Account Settings</h3>
+                        <p>Update your contact information and service preferences.</p>
+                        <button class="btn-primary" style="width: 100%; margin-top: 1rem;">Settings</button>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">📞</div>
+                        <h3>Request Service</h3>
+                        <p>Request additional service or make special requests.</p>
+                        <button class="btn-primary" style="width: 100%; margin-top: 1rem;">Request Service</button>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">🚪</div>
+                        <h3>Logout</h3>
+                        <p>Sign out of your account securely.</p>
+                        <button class="btn-primary" id="logout-btn" style="width: 100%; margin-top: 1rem;">Logout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="ChatGPT Image Dec 16, 2025, 12_59_10 PM.png" alt="Happy Tails Logo" class="footer-logo">
+                    <p>Professional poop scooping and waste removal services.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="residential.html">Residential Services</a></li>
+                        <li><a href="commercial.html">Commercial Services</a></li>
+                        <li><a href="products.html">Products</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="about.html#employment">Employment</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="tel:+18001234567">(800) 123-4567</a></li>
+                        <li><a href="locations.html">Get a Quote</a></li>
+                        <li><a href="customer.html">Customer Login</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Happy Tails. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Accessibility Widget -->
+    <div id="accessibility-widget" class="accessibility-widget">
+        <button class="accessibility-toggle" aria-label="Accessibility Options">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 2v4M12 18v4M2 12h4M18 12h4"></path>
+            </svg>
+        </button>
+        <div class="accessibility-menu">
+            <h3>Accessibility Options</h3>
+            <div class="accessibility-option">
+                <label>
+                    <input type="checkbox" id="high-contrast"> High Contrast
+                </label>
+            </div>
+            <div class="accessibility-option">
+                <label>
+                    <input type="checkbox" id="large-text"> Large Text
+                </label>
+            </div>
+            <div class="accessibility-option">
+                <label>
+                    <input type="checkbox" id="readable-font"> Readable Font
+                </label>
+            </div>
+            <div class="accessibility-option">
+                <button id="reset-accessibility">Reset</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Search Modal -->
+    <div id="search-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Search</h2>
+            <input type="search" placeholder="Search..." class="search-input">
+            <div class="search-results"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
