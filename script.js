@@ -130,37 +130,6 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Blog Filtering
-const filterButtons = document.querySelectorAll('.filter-btn');
-const blogCards = document.querySelectorAll('.blog-card');
-
-if (filterButtons.length > 0) {
-    filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            // Remove active class from all buttons
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            // Add active class to clicked button
-            button.classList.add('active');
-            
-            const category = button.getAttribute('data-category');
-            
-            // Filter blog cards
-            blogCards.forEach(card => {
-                if (category === 'all') {
-                    card.style.display = 'block';
-                } else {
-                    const cardCategories = card.getAttribute('data-category');
-                    if (cardCategories && cardCategories.includes(category)) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                }
-            });
-        });
-    });
-}
-
 // Customer Login Form
 const loginForm = document.getElementById('login-form');
 const forgotPasswordLink = document.getElementById('forgot-password');
@@ -303,4 +272,5 @@ if (typeof gtag !== 'undefined') {
     // Google Analytics tracking would go here
     console.log('Analytics initialized');
 }
+
 
