@@ -1,6 +1,29 @@
 // Mobile Menu Toggle
 const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
 const navMenu = document.querySelector('.nav-menu');
+const navbar = document.querySelector('.navbar');
+
+// Navbar scroll effect
+if (navbar) {
+    window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 20);
+    }, { passive: true });
+}
+
+// Scroll reveal animations
+const revealElements = document.querySelectorAll('.reveal');
+if (revealElements.length > 0) {
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+}
 
 if (mobileMenuToggle) {
     mobileMenuToggle.addEventListener('click', () => {
